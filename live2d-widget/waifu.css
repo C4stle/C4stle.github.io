@@ -1,8 +1,8 @@
 #waifu-toggle {
-	background-color: #fa0;
+	background-color: #81f5ff;
 	border-radius: 5px;
-	bottom: 66px;
-	color: #fff;
+	bottom: 60px;
+	color: #434e52;
 	cursor: pointer;
 	font-size: 12px;
 	left: 0;
@@ -10,7 +10,7 @@
 	padding: 5px 2px 5px 5px;
 	position: fixed;
 	transition: margin-left 1s;
-	width: 60px;
+	width: 62px;
 	writing-mode: vertical-rl;
 }
 
@@ -25,7 +25,7 @@
 /*看板娘*/
 #waifu {
 	bottom: -1000px;
-	right: 0;
+	right: 30px;
 	line-height: 0;
 	position: fixed;
 	transform: translateY(3px);
@@ -85,7 +85,7 @@
 	color: #aaa;
 	opacity: 0;
 	position: absolute;
-	left: -10px;
+	left: 0px;
 	top: 70px;
 	transition: opacity 1s;
 }
