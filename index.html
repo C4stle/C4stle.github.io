@@ -78,13 +78,13 @@ document.body.addEventListener('input', POWERMODE);
   return res.json();
 })
 .then(function (data) {
-  var sub = ''.length == 0  ? new Array() : ''.split(",");
-  var both = sub.unshift(data.hitokoto)  
+  var sub = '今天也要努力哦！'.length == 0  ? new Array() : '今天也要努力哦！'.split(",");
+  var both = sub.unshift(data.hitokoto,data.from)  
   var typed = new Typed(".subtitle", {
   strings: sub,
   startDelay: 300,
   typeSpeed: 100,
-  loop: true,
+  loop: false,
   backSpeed: 50
   });
 })
