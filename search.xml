@@ -1,6 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>sqli-labs-1</title>
+    <url>/2020/03/13/sqli-labs-1/</url>
+    <content><![CDATA[<h1>sqli-lab-1</h1>
+<h3 id="判断什么型的注入">判断什么型的注入</h3>
+<p>题目提示是单引号闭合注入：</p>
+<p><a href="/images/sqli-labs-1/5-1584076775612.png" data-fancybox="group" data-caption="5" class="fancybox"><img alt="5" data-src="/images/sqli-labs-1/5-1584076775612.png" class="lazyload" title="5"></a></p>
+<h3 id="判断的方法：">判断的方法：</h3>
+<p>加个单引号，页面<strong>没有</strong>正常显示，但是把后面的语句注释掉就<strong>可以</strong>正常显示。</p>
+<p>这种情况就说明是<strong>单引号闭合注入</strong></p>
+<p><a href="/images/sqli-labs-1/6.png" data-fancybox="group" data-caption="6" class="fancybox"><img alt="6" data-src="/images/sqli-labs-1/6.png" class="lazyload" title="6"></a></p>
+<p>加入注释后正常显示了</p>
+<p><a href="/images/sqli-labs-1/7.png" data-fancybox="group" data-caption="7" class="fancybox"><img alt="7" data-src="/images/sqli-labs-1/7.png" class="lazyload" title="7"></a></p>
+<p>注释符可以选的有：</p>
+<ul>
+<li>
+<h1></h1>
+<p>如果使用#号的话需要改成url编码 %23</p>
+<p><a href="/images/sqli-labs-1/8.png" data-fancybox="group" data-caption="8" class="fancybox"><img alt="8" data-src="/images/sqli-labs-1/8.png" class="lazyload" title="8"></a></p>
+<p>可以看到用#号的话 数据库是收不到的，因为在URL中 #号是用来指导浏览器动作的，对服务器端完全无用。（想知道具体干嘛的可以去百度，我百度了没大懂所以就不管他了🙄）</p>
+<p><a href="/images/sqli-labs-1/9.png" data-fancybox="group" data-caption="9" class="fancybox"><img alt="9" data-src="/images/sqli-labs-1/9.png" class="lazyload" title="9"></a></p>
+<p>编码后就可以正常访问</p>
+</li>
+<li>
+<p>– ’</p>
+<p>一般都是用 – 即可，但是语句中有个单引号需要闭合：id = ’     <font color="d63447">1’  –</font>    ’  limit 0,1  (红色为我们输入的)，可以看到有一个单引号需要闭合，所以们在最后用一个单引号 ‘ 即可</p>
+<p><a href="/images/sqli-labs-1/10.png" data-fancybox="group" data-caption="10" class="fancybox"><img alt="10" data-src="/images/sqli-labs-1/10.png" class="lazyload" title="10"></a></p>
+<p><a href="/images/sqli-labs-1/11.png" data-fancybox="group" data-caption="11" class="fancybox"><img alt="11" data-src="/images/sqli-labs-1/11.png" class="lazyload" title="11"></a></p>
+</li>
+<li>
+<p>–+ 和 --%20（空格）</p>
+<p>**–+<strong>中的➕号会变成空格和后面隔开</strong>–**和单引号，空格同理，不过要用URL编码后的空格</p>
+<p><a href="/images/sqli-labs-1/12.png" data-fancybox="group" data-caption="12" class="fancybox"><img alt="12" data-src="/images/sqli-labs-1/12.png" class="lazyload" title="12"></a></p>
+</li>
+</ul>
+<h3 id="order-by判断字段数">order by判断字段数</h3>
+<p>3的时候正常显示 4的时候不可以，字段数为3</p>
+<p><a href="/images/sqli-labs-1/13.png" data-fancybox="group" data-caption="13" class="fancybox"><img alt="13" data-src="/images/sqli-labs-1/13.png" class="lazyload" title="13"></a></p>
+<h3 id="联合查询判断回显位置">联合查询判断回显位置</h3>
+<p>要注意，联合查询的时候 前面<strong>语句要是错误</strong>的才可以成功</p>
+<p><a href="/images/sqli-labs-1/14.png" data-fancybox="group" data-caption="14" class="fancybox"><img alt="14" data-src="/images/sqli-labs-1/14.png" class="lazyload" title="14"></a></p>
+<h3 id="注入前需要知道的东西：">注入前需要知道的东西：</h3>
+<ul>
+<li>
+<p>database()函数：获取数据库名；</p>
+</li>
+<li>
+<p>version()函数：获取数据库版本；</p>
+</li>
+<li>
+<p>user()函数：查看当前用户</p>
+</li>
+<li>
+<p>information_schema：mysql5.0及以上版本自带的数据库，记录当前mysql下所有数据库名，表名，列名。</p>
+<ul>
+<li>information_schema.tables：记录所有表名信息的表</li>
+<li>information_schema.column：记录所有列名信息的表</li>
+<li>table_name：表名</li>
+<li>column_name：列名</li>
+<li>table_schema：数据库名</li>
+</ul>
+</li>
+<li>
+<p>group_concat()函数：如果只返回一个(limit 0,1)或者要查询的东西多于1个，就要用上这个函数，它可以将所有查到的结果连接起来一起返回</p>
+<ul>
+<li>
+<p>例如：</p>
+<div class="code-area-wrap"><div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">Code</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">group_concat(table_name) from information_schema where table_schema &#x3D; &quot;xxx&quot;</span><br></pre></td></tr></table></figure></div>
+<p>括号括起来的是要连接在一起的东西。</p>
+</li>
+</ul>
+</li>
+<li></li>
+</ul>
+<h3 id="联合查询获取数据：">联合查询获取数据：</h3>
+<p>获取当前数据库：security  以及数据库版本：5.7.26</p>
+<p><a href="/images/sqli-labs-1/15.png" data-fancybox="group" data-caption="15" class="fancybox"><img alt="15" data-src="/images/sqli-labs-1/15.png" class="lazyload" title="15"></a></p>
+<ol start="2">
+<li>
+<p>获取security库下所有表名：</p>
+<p>payload：当中的“security”  可以替换为 ‘security’ 以及 database()</p>
+<div class="code-area-wrap"><div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">Code</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">?id&#x3D;-1&#39; union select 1,group_concat(table_name),3 from information_schema.tables where table_schema &#x3D;&quot;security&quot;--+</span><br></pre></td></tr></table></figure></div>
+<p><a href="/images/sqli-labs-1/16.png" data-fancybox="group" data-caption="16" class="fancybox"><img alt="16" data-src="/images/sqli-labs-1/16.png" class="lazyload" title="16"></a></p>
+</li>
+<li>
+<p>获取users表下的所有列名：</p>
+<p>payload：</p>
+<div class="code-area-wrap"><div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">Code</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">?id&#x3D;-1&#39; union select 1,group_concat(column_name),3 from information_schema.columns where table_name &#x3D;&quot;users&quot;</span><br></pre></td></tr></table></figure></div>
+<p><a href="/images/sqli-labs-1/17.png" data-fancybox="group" data-caption="17" class="fancybox"><img alt="17" data-src="/images/sqli-labs-1/17.png" class="lazyload" title="17"></a></p>
+</li>
+<li>
+<p>同时获取users下 username和password 的列值</p>
+<p>payload：0x2b是ascii码中的2b 也就是➕，用来分隔开账号+密码，方便我们查看；也可以用不用ascii码，用单引号或者双引号括起来（username,’~’,password）也是可以的。</p>
+<p>也可以不同时获取两个列名，分开获取也是可以的</p>
+<div class="code-area-wrap"><div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">Code</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">?id&#x3D;-1&#39; union select 1,group_concat(username,0x2b,password),3 from users--+</span><br></pre></td></tr></table></figure></div>
+<p><a href="/images/sqli-labs-1/18.png" data-fancybox="group" data-caption="18" class="fancybox"><img alt="18" data-src="/images/sqli-labs-1/18.png" class="lazyload" title="18"></a></p>
+</li>
+</ol>
+<hr>
+<h3 id="写在最后">写在最后</h3>
+<p><font color="#9be3de" size="3" face="微软雅黑">明明以前有做过，但是时间久了就一点都想不起来😱😱😱</font></p>
+<p><font color="#9be3de" size="3" face="微软雅黑">这也是我搭博客的一个原因吧，一个是觉得有一个自己的博客事件很酷的事情；一个是可以用来当备忘录， 毕竟自己写的总结的东西肯定是比光看别人的好多了🤗。</font></p>
+<p><font color="#9be3de" size="3" face="微软雅黑">以前都用word做笔记，但是我觉得word记笔记太难看了！太难看了！太难看了！所以基本都是记完就不去看了。。。（地铁老爷爷看手机.jpg</font></p>
+<p><font color="#9be3de" size="3" face="微软雅黑"></font></p>
+<p><font color="#9be3de" size="3" face="微软雅黑"></font></p>
+]]></content>
+      <tags>
+        <tag>sqli-lab</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2020/03/07/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
