@@ -3,11 +3,11 @@
   <entry>
     <title>密码学_笔记备忘</title>
     <url>/2020/03/17/%E5%AF%86%E7%A0%81%E5%AD%A6_%E7%AC%94%E8%AE%B0%E5%A4%87%E5%BF%98/</url>
-    <content><![CDATA[<h1>DES算法</h1>
+    <content><![CDATA[<h2 id="DES算法">DES算法</h2>
 <p><a href="/images/%E5%AF%86%E7%A0%81%E5%AD%A6_%E7%AC%94%E8%AE%B0%E5%A4%87%E5%BF%98/image-20200317195055615.png" data-fancybox="group" data-caption="image-20200317195055615" class="fancybox"><img alt="image-20200317195055615" data-src="/images/%E5%AF%86%E7%A0%81%E5%AD%A6_%E7%AC%94%E8%AE%B0%E5%A4%87%E5%BF%98/image-20200317195055615.png" class="lazyload" title="image-20200317195055615"></a></p>
 <ol>
 <li>
-<h2 id="初始置换">初始置换</h2>
+<h3 id="初始置换">初始置换</h3>
 <p>输入64比特的表M：数字代表输入顺序</p>
 <p><a href="/images/%E5%AF%86%E7%A0%81%E5%AD%A6_%E7%AC%94%E8%AE%B0%E5%A4%87%E5%BF%98/image-20200317163700560.png" data-fancybox="group" data-caption="image-20200317163700560" class="fancybox"><img alt="image-20200317163700560" data-src="/images/%E5%AF%86%E7%A0%81%E5%AD%A6_%E7%AC%94%E8%AE%B0%E5%A4%87%E5%BF%98/image-20200317163700560.png" class="lazyload" title="image-20200317163700560"></a></p>
 <p>给出两张置换表，分别是初始置换IP和逆初始置换$IP^{-1}$<font color="#9be3de" size="3" face="微软雅黑">两张表是固定的</font></p>
@@ -18,12 +18,12 @@
 <p>逆初始就是把现在X中的40位放在第1位，第8位放在第2位，我们顺着找一下，可以发现全部带进去之后就变回了M。也就是 <a href="/images/%E5%AF%86%E7%A0%81%E5%AD%A6_%E7%AC%94%E8%AE%B0%E5%A4%87%E5%BF%98/image-20200317164645551.png" data-fancybox="group" data-caption="image-20200317164645551" class="fancybox"><img alt="image-20200317164645551" data-src="/images/%E5%AF%86%E7%A0%81%E5%AD%A6_%E7%AC%94%E8%AE%B0%E5%A4%87%E5%BF%98/image-20200317164645551.png" class="lazyload" title="image-20200317164645551"></a></p>
 </li>
 <li>
-<h2 id="轮结构">轮结构</h2>
+<h3 id="轮结构">轮结构</h3>
 <p>首先看一下整个轮结构，之后再来分开看。</p>
 <p><a href="/images/%E5%AF%86%E7%A0%81%E5%AD%A6_%E7%AC%94%E8%AE%B0%E5%A4%87%E5%BF%98/image-20200317165428112.png" data-fancybox="group" data-caption="image-20200317165428112" class="fancybox"><img alt="image-20200317165428112" data-src="/images/%E5%AF%86%E7%A0%81%E5%AD%A6_%E7%AC%94%E8%AE%B0%E5%A4%87%E5%BF%98/image-20200317165428112.png" class="lazyload" title="image-20200317165428112"></a></p>
-<h3 id="一、">一、</h3>
+<h4 id="一、">一、</h4>
 <p>先看左半边，输入的64比特的轮分为L和R，各32比特。每轮(一般16轮)变换可以用如下公式表示：<a href="/images/%E5%AF%86%E7%A0%81%E5%AD%A6_%E7%AC%94%E8%AE%B0%E5%A4%87%E5%BF%98/image-20200317165805556.png" data-fancybox="group" data-caption="image-20200317165805556" class="fancybox"><img alt="image-20200317165805556" data-src="/images/%E5%AF%86%E7%A0%81%E5%AD%A6_%E7%AC%94%E8%AE%B0%E5%A4%87%E5%BF%98/image-20200317165805556.png" class="lazyload" title="image-20200317165805556"></a></p>
-<h3 id="二、">二、</h3>
+<h4 id="二、">二、</h4>
 <p>然后重点看中间由虚线框起来的函数F(R,K)，具体看下图</p>
 <p><a href="/images/%E5%AF%86%E7%A0%81%E5%AD%A6_%E7%AC%94%E8%AE%B0%E5%A4%87%E5%BF%98/image-20200317172804722.png" data-fancybox="group" data-caption="image-20200317172804722" class="fancybox"><img alt="image-20200317172804722" data-src="/images/%E5%AF%86%E7%A0%81%E5%AD%A6_%E7%AC%94%E8%AE%B0%E5%A4%87%E5%BF%98/image-20200317172804722.png" class="lazyload" title="image-20200317172804722"></a></p>
 <ol>
@@ -51,7 +51,7 @@
 <p><a href="/images/%E5%AF%86%E7%A0%81%E5%AD%A6_%E7%AC%94%E8%AE%B0%E5%A4%87%E5%BF%98/image-20200317193048145.png" data-fancybox="group" data-caption="image-20200317193048145" class="fancybox"><img alt="image-20200317193048145" data-src="/images/%E5%AF%86%E7%A0%81%E5%AD%A6_%E7%AC%94%E8%AE%B0%E5%A4%87%E5%BF%98/image-20200317193048145.png" class="lazyload" title="image-20200317193048145"></a></p>
 </li>
 </ol>
-<h2 id="密钥的产生">密钥的产生</h2>
+<h3 id="密钥的产生">密钥的产生</h3>
 <ol>
 <li>密钥最开始也是64位，不过在进行第一次置换(置换后变成56比特)前，要去掉8,16,24,32,40,48,56,64这八个校验位。</li>
 <li>剩下的56比特进行第一次置换选择，八行七列<a href="/images/%E5%AF%86%E7%A0%81%E5%AD%A6_%E7%AC%94%E8%AE%B0%E5%A4%87%E5%BF%98/image-20200317193850873.png" data-fancybox="group" data-caption="image-20200317193850873" class="fancybox"><img alt="image-20200317193850873" data-src="/images/%E5%AF%86%E7%A0%81%E5%AD%A6_%E7%AC%94%E8%AE%B0%E5%A4%87%E5%BF%98/image-20200317193850873.png" class="lazyload" title="image-20200317193850873"></a></li>
@@ -59,8 +59,8 @@
 <li>最后再合并进行第二次置换选择<a href="/images/%E5%AF%86%E7%A0%81%E5%AD%A6_%E7%AC%94%E8%AE%B0%E5%A4%87%E5%BF%98/image-20200317194601207.png" data-fancybox="group" data-caption="image-20200317194601207" class="fancybox"><img alt="image-20200317194601207" data-src="/images/%E5%AF%86%E7%A0%81%E5%AD%A6_%E7%AC%94%E8%AE%B0%E5%A4%87%E5%BF%98/image-20200317194601207.png" class="lazyload" title="image-20200317194601207"></a>这样就得到了最后的密钥K</li>
 </ol>
 <hr>
-<p><font color="#9be3de" size="8" face="微软雅黑">不是总结的总结🤷‍♂️</font></p>
-<p><font color="#9be3de" size="3" face="微软雅黑">传进来的时候已经是64二进制。</font></p>
+<h2 id="font-color-9be3de-size-8-face-微软雅黑-不是总结的总结🤷‍♂️-font"><font color="#9be3de" size="8" face="微软雅黑">不是总结的总结🤷‍♂️</font></h2>
+<p><font color="#9be3de" size="3" face="微软雅黑">传进来的时候已经是64比特的二进制。</font></p>
 <p><font color="#9be3de" size="3" face="微软雅黑">轮结构重复了16遍，$R_{i-1}$在进函数F(R,K)前已经赋值给$L_i$，$L_{i-1}$在最后跟函数F的值进行⊕后赋值给$R_i$</font></p>
 <p><font color="#9be3de" size="3" face="微软雅黑">密钥的生成，在第二次置换选择前就赋值给了$C_i$、$D_i$</font></p>
 <p><font color="#9be3de" size="3" face="微软雅黑">走完16遍后要进行逆初始置换$IP^{-1}$，才能得到64比特的密文！</font></p>
