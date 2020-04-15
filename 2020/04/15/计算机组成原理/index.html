@@ -80,36 +80,36 @@ function activateLightMode(){
 <ol>
 <li>
 <p><strong>高位字节</strong>地址为字地址(大端、大尾方式)</p>
-<p><a href="../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20200415113321484.png" data-fancybox="group" data-caption="image-20200415113321484" class="fancybox"><img alt="image-20200415113321484" data-src="../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20200415113321484.png" class="lazyload" title="image-20200415113321484"></a></p>
+<p><a href="/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20200415113321484.png" data-fancybox="group" data-caption="image-20200415113321484" class="fancybox"><img alt="image-20200415113321484" title="image-20200415113321484" data-src="/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20200415113321484.png" class="lazyload"></a></p>
 </li>
 <li>
 <p><strong>低位字节</strong>地址为字地址(小端、小尾方式)</p>
-<p><a href="../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20200415113416479.png" data-fancybox="group" data-caption="image-20200415113416479" class="fancybox"><img alt="image-20200415113416479" data-src="../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20200415113416479.png" class="lazyload" title="image-20200415113416479"></a></p>
+<p><a href="/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20200415113416479.png" data-fancybox="group" data-caption="image-20200415113416479" class="fancybox"><img alt="image-20200415113416479" title="image-20200415113416479" data-src="/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20200415113416479.png" class="lazyload"></a></p>
 </li>
 </ol>
 <h5 id="二、主存储器当中如何按字节寻址">二、主存储器当中如何按字节寻址</h5>
-<p>​	设地址线有24根，如果按<strong>字节</strong>寻址(每一个字节(8bit)都是一个地址) ，访问的范围就是$2^24$ = 16MB。</p>
+<p>​	设地址线有24根，如果按<strong>字节</strong>寻址(每一个字节(8bit)都是一个地址) ，访问的范围就是$2^{24}$ = 16MB。</p>
 <p>​	如果是按<strong>字</strong>寻址：(一根地址线可以用0、1来区分地址。两根可以区分$2^2$ = 4个地址)</p>
 <ol>
 <li>
-<p>字长为16位时，16位就是 2 个 8 bit，2个字节，需要一根地址线来区分两个字节的地址，所以寻址范围是 $2^(24-1)$ = 8MW（W是word的缩写）</p>
+<p>字长为16位时，16位就是 2 个 8 bit，2个字节，需要一根地址线来区分两个字节的地址，所以寻址范围是 $2^{24-1}$ = 8MW（W是word的缩写）</p>
 </li>
 <li>
-<p>字长为32位是，是四个字节，需要两根地址线来区分四个字节的地址，所以寻址范围是$2^22$ = 4MW</p>
+<p>字长为32位是，是四个字节，需要两根地址线来区分四个字节的地址，所以寻址范围是$2^{22}$ = 4MW</p>
 <p>题：一个按16K × 32位的存储器，其地址线和数据线的总和是(46)</p>
-<p>​	容量16K，说明地址线有 ($2^(14)$ = 16KB)14根，字长由数据线数量决定，一根数据线就是1位字长，所以数据线有32根。 14 + 32 = 46根总共。</p>
+<p>​	容量16K，说明地址线有 ($2^{14}$ = 16KB)14根，字长由数据线数量决定，一根数据线就是1位字长，所以数据线有32根。 14 + 32 = 46根总共。</p>
 </li>
 </ol>
 <h3 id="半导体存储芯片">半导体存储芯片</h3>
 <h4 id="半导体存储芯片的基本结构">半导体存储芯片的基本结构</h4>
-<p><a href="../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20200415120249696.png" data-fancybox="group" data-caption="image-20200415120249696" class="fancybox"><img alt="image-20200415120249696" data-src="../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20200415120249696.png" class="lazyload" title="image-20200415120249696"></a></p>
+<p><a href="/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20200415120249696.png" data-fancybox="group" data-caption="image-20200415120249696" class="fancybox"><img alt="image-20200415120249696" title="image-20200415120249696" data-src="/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20200415120249696.png" class="lazyload"></a></p>
 <h5 id="半导体芯片的容量">半导体芯片的容量</h5>
 <p>​	半导体芯片的容量由地址线(单向，进行编址，看图)和数据线(双向，读/写，看图)组成</p>
-<p>​	10根地址线 和 4根数据线 组成的芯片容量表示成 1K($2^(10)$) × 4位。</p>
-<p>​	十根地址总线表示：如果对存储矩阵中的<strong>存储单元</strong>进行编址的话，需要10位的二进制数，能够编址的个数(范围)就在00 0000 0000~11 1111 1111共有$2^(10)$Byte = 1KB</p>
+<p>​	10根地址线 和 4根数据线 组成的芯片容量表示成 1K($2^{10}$) × 4位。</p>
+<p>​	十根地址总线表示：如果对存储矩阵中的<strong>存储单元</strong>进行编址的话，需要10位的二进制数，能够编址的个数(范围)就在00 0000 0000~11 1111 1111共有$2^{10}$Byte = 1KB</p>
 <p>​	4根数据线表示：每个存储单元最多存储4个二进制数。</p>
 <p><font color="#9be3de" size="3" face="微软雅黑">	不懂就问：8个二进制数占1一个字节，怎么理解10位二进制是1KB？</font></p>
-<p>​	两个不同概念，一个是存储时的容量大小，一个是编址时的范围。10位二进制可以表示$2^10$也就是1024个不同的<strong>数据的地址</strong>，每个地址可容纳<strong>数据的大小</strong>为一个字节(Byte.)</p>
+<p>​	两个不同概念，一个是存储时的容量大小，一个是编址时的范围。10位二进制可以表示$2^{10}$也就是1024个不同的<strong>数据的地址</strong>，每个地址可容纳<strong>数据的大小</strong>为一个字节(Byte.)</p>
 <h5 id="片选线">片选线</h5>
 <p>​	片选线有CS(chip select芯片选择)、CE(chip enable芯片使能)两种，一般是CS。</p>
 <p>​	片选线用来选择访问的信息存在于哪个/哪几个芯片当中，找到之后输入电信号激活芯片。</p>
@@ -117,10 +117,11 @@ function activateLightMode(){
 <h5 id="读-写控制线">读/写控制线</h5>
 <p>​	用来决定对存储器的操作时读还是写。</p>
 <p>只有一根线WE时，就是下图中上方的情况，两根线的时候就是下图中下方的情况</p>
-<p><a href="../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20200415123836172.png" data-fancybox="group" data-caption="image-20200415123836172" class="fancybox"><img alt="image-20200415123836172" data-src="../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20200415123836172.png" class="lazyload" title="image-20200415123836172"></a></p>
+<p><a href="/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20200415123836172.png" data-fancybox="group" data-caption="image-20200415123836172" class="fancybox"><img alt="image-20200415123836172" title="image-20200415123836172" data-src="/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20200415123836172.png" class="lazyload"></a></p>
 <h5 id="用多少片的16K×1位的存储芯片可以组成64K-×-8位的存储器？">用多少片的16K×1位的存储芯片可以组成64K × 8位的存储器？</h5>
-<pre><code>$(64K × 8) \div (16K × 1)$ = 4K × 8 = 32
-</code></pre>
+<p>$$<br>
+\frac{(64K × 8)}{(16K × 1)} = 4K × 8 = 32<br>
+$$</p>
 <hr>
 <p><font color="#9be3de" size="3" face="微软雅黑"></font></p>
 <p><font color="#9be3de" size="3" face="微软雅黑"></font></p>
