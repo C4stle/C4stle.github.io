@@ -1,0 +1,185 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"><title>JxXxX - 是个人</title><meta name="description" content="一个想好好学习的gamer"><meta name="author" content="JxXxX"><meta name="copyright" content="JxXxX"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin><meta name="twitter:card" content="summary"><meta name="twitter:title" content="JxXxX"><meta name="twitter:description" content="一个想好好学习的gamer"><meta name="twitter:image" content="https://c4stle.github.io/img/avatar.jpg"><meta property="og:type" content="website"><meta property="og:title" content="JxXxX"><meta property="og:url" content="https://c4stle.github.io/page/2/"><meta property="og:site_name" content="JxXxX"><meta property="og:description" content="一个想好好学习的gamer"><meta property="og:image" content="https://c4stle.github.io/img/avatar.jpg"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>const autoChangeMode = 'false'
+var t = Cookies.get("theme");
+if (autoChangeMode == '1'){
+const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+const isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+const isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+if (t === undefined){
+  if (isLightMode) activateLightMode()
+  else if (isDarkMode) activateDarkMode()
+  else if (isNotSpecified || hasNoSupport){
+    console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+    now = new Date();
+    hour = now.getHours();
+    isNight = hour < 6 || hour >= 18
+    isNight ? activateDarkMode() : activateLightMode()
+}
+} else if (t == 'light') activateLightMode()
+else activateDarkMode()
+
+
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
+
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="canonical" href="https://c4stle.github.io/page/2/"><link rel="preload" href="/img/8iJAF1.png" as="image"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://xxx/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    title: 'Snackbar.bookmark.title',
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: {"text":"富强,民主,文明,和谐,自由,平等,公正,法治,爱国,敬业,诚信,友善","fontSize":"15px"},
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  baiduPush: false,
+  isHome: true,
+  isPost: false
+  
+}</script><meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="JxXxX" type="application/atom+xml">
+</head><body><header> <div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">JxXxX</a></span><span class="toggle-menu pull_right close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-hourglass-half"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于我</span></a></div></div></span><span class="pull_right" id="search_button"><a class="site-page social-icon search"><i class="fa fa-search fa-fw"></i><span> 搜索</span></a></span></div></header><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">18</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">11</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">1</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-hourglass-half"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于我</span></a></div></div></div></div><div id="body-wrap"><nav class="full_page" id="nav" style="background-image: url(/img/8iJAF1.png)"><div id="site-info"><div id="site-title"><span class="blogtitle">JxXxX</span></div><div id="site-sub-title"><span class="subtitle"></span></div><div id="site-social-icons"><a class="social-icon" target="_blank"><i class="fa fa-spinner" aria-hidden="true"></i></a></div></div><div class="scroll-down"><i class="fa fa-angle-down scroll-down-effects"></i></div></nav><main id="content-outer"><div class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item article-container"><div class="post_cover left_radius"><a href="/2020/10/01/sqli-labs-7/" title="sqli-labs-7"><img class="post_bg lazyload" data-src="/img/cover2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="sqli-labs-7"></a></div><div class="recent-post-info">  <a class="article-title" href="/2020/10/01/sqli-labs-7/" title="sqli-labs-7">sqli-labs-7</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-10-01</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/sqli-labs/">sqli-labs</a></span><div class="content">sqli-labs-7
+一、mysql数据库读写文件的函数
+
+
+使用前提条件
+
+当前用户的权限要足够高
+mysql配置文件secure_file_priv的值不为NULL
+知道绝对路径(写入webshell连接时需要)
+
+
+
+into outfile函数
+
+
+用法：不只是php文件
+Code&#39 ...</div></div></div><div class="recent-post-item article-container"><div class="post_cover right_radius"><a href="/2020/10/01/sqli-labs-2~4/" title="sqli-labs-2~4"><img class="post_bg lazyload" data-src="/img/cover2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="sqli-labs-2~4"></a></div><div class="recent-post-info">  <a class="article-title" href="/2020/10/01/sqli-labs-2~4/" title="sqli-labs-2~4">sqli-labs-2~4</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-10-01</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/sqli-labs/">sqli-labs</a></span><div class="content">写在开头
+因为这些比较像，主要是如何区分注入类型
+
+sqli-labs-2
+第二题跟第一题不一样，第二题是数字型的sql注入。
+如何判断数字型和字符型的sql注入
+数字型的判断：
+
+单引号、双引号、括号等闭合符号报错（尽量都试一下）
+
+
+
+and 1=1 可以显示结果 and 1=2 不会显示结果但 ...</div></div></div><div class="recent-post-item article-container"><div class="post_cover left_radius"><a href="/2020/10/01/sqli-labs-17/" title="sqli-labs-17"><img class="post_bg lazyload" data-src="/img/cover2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="sqli-labs-17"></a></div><div class="recent-post-info">  <a class="article-title" href="/2020/10/01/sqli-labs-17/" title="sqli-labs-17">sqli-labs-17</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-10-01</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/sqli-labs/">sqli-labs</a></span><div class="content">sqli-labs-17
+check_input函数
+
+如果输入的value非空，取前16位。限制了字数上限
+get_magic_quotes_gpc()：魔术引号函数，如果在配置文件里get_magic_quotes_gpc = On，返回1，等于off，则返回0。
+如果魔术引号开着，strips ...</div></div></div><div class="recent-post-item article-container"><div class="post_cover right_radius"><a href="/2020/10/01/sqli-labs-11/" title="sqli-labs-11~12"><img class="post_bg lazyload" data-src="/img/cover2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="sqli-labs-11~12"></a></div><div class="recent-post-info">  <a class="article-title" href="/2020/10/01/sqli-labs-11/" title="sqli-labs-11~12">sqli-labs-11~12</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-10-01</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/sqli-labs/">sqli-labs</a></span><div class="content">sqli-labs-11
+万能密码
+
+
+用户名：1’ or 1 = 1 #
+密码：随便
+万能密码百度一搜一大堆，但是你得知道他是拼接到sql语句中的，所以你只要
+
+构造一个恒真的语句
+闭合前面，注释后面
+
+
+
+过程记录
+
+
+进来是一个登陆界面
+尝试万能密码。
+
+成功进入，说明我们输入可以与数据库交互 ...</div></div></div><div class="recent-post-item article-container"><div class="post_cover left_radius"><a href="/2020/10/01/sqli-labs-13/" title="sqli-labs-13~14"><img class="post_bg lazyload" data-src="/img/cover2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="sqli-labs-13~14"></a></div><div class="recent-post-info">  <a class="article-title" href="/2020/10/01/sqli-labs-13/" title="sqli-labs-13~14">sqli-labs-13~14</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-10-01</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/sqli-labs/">sqli-labs</a></span><div class="content">sqli-labs-13
+判断闭合符号
+
+
+加单引号闭合，根据报错语句发现是 单引号+括号 闭合
+
+单引号闭合报错、双引号不报错、单引号+括号报错、双引号+括号不报错
+
+
+
+
+尝试万能密码登陆，发现没有回显，要用盲注或者报错注入
+
+
+
+报错注入
+
+
+翻之前lab5~6的报错注入记录
+
+
+判断数据库名 ...</div></div></div><div class="recent-post-item article-container"><div class="post_cover right_radius"><a href="/2020/10/01/sqli-labs-15~16/" title="sqli-labs-15~16"><img class="post_bg lazyload" data-src="/img/cover2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="sqli-labs-15~16"></a></div><div class="recent-post-info">  <a class="article-title" href="/2020/10/01/sqli-labs-15~16/" title="sqli-labs-15~16">sqli-labs-15~16</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-10-01</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/sqli-labs/">sqli-labs</a></span><div class="content">sqli-labs-15
+万能密码
+万能密码尝试，成功进入。
+但是没有回显，尝试报错注入。
+没有回显，所以判断用盲注。
+
+布尔盲注
+
+
+判断数据库名payload：
+Code1&#39; or (select ascii(substr(database(),1,1))) &gt; 97 #
+注意这里 ...</div></div></div><div class="recent-post-item article-container"><div class="post_cover left_radius"><a href="/2020/10/01/hello-world/" title="Hello World"><img class="post_bg lazyload" data-src="https://cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@2.1.0/top_img/default.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"></a></div><div class="recent-post-info">  <a class="article-title" href="/2020/10/01/hello-world/" title="Hello World">Hello World</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-10-01</time><div class="content">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in  ...</div></div></div><div class="recent-post-item article-container"><div class="post_cover right_radius"><a href="/2020/03/13/sqli-labs-1/" title="sqli-labs-1"><img class="post_bg lazyload" data-src="/img/cover2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="sqli-labs-1"></a></div><div class="recent-post-info">  <a class="article-title" href="/2020/03/13/sqli-labs-1/" title="sqli-labs-1">sqli-labs-1</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-03-13</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/sqli-labs/">sqli-labs</a></span><div class="content">写在开头：
+一个小目标：把sqli-labs全部做一遍并且每题的解题过程、心得体会、新的发现都写下来
+
+判断什么型的注入
+题目提示是单引号闭合注入：
+
+判断的方法：
+加个单引号，页面没有正常显示，但是把后面的语句注释掉就可以正常显示。
+这种情况就说明是单引号闭合注入
+
+加入注释后正常显示了
+
+注释符 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fa fa-fw fa-chevron-left" aria-hidden="true"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"><div class="author-info__name">JxXxX</div><div class="author-info__description">一个想好好学习的gamer</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length_num">18</div></a></div><div class="card-info-data-item is-center">      <a href="/tags/"><div class="headline">标签</div><div class="length_num">11</div></a></div><div class="card-info-data-item is-center">     <a href="/categories/"><div class="headline">分类</div><div class="length_num">1</div></a></div></div><div class="card-info-bookmark is-center"><a class="bookmark button--primary button--animated" id="bookmark-it" href="javascript:;" title="加入书签" target="_self"><i class="fa fa-bookmark" aria-hidden="true"></i><span>加入书签</span></a></div><div class="card-info-social-icons is-center"><a class="social-icon" target="_blank"><i class="fa fa-spinner" aria-hidden="true"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fa fa-bullhorn card-announcement-animation" aria-hidden="true"></i><span>公告</span></div><div class="announcement_content">记录笔记和日常~</div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fa fa-history" aria-hidden="true"></i><span>最新文章</span></div><div class="aside-recent-item"> <div class="aside-recent-post"><a href="/2022/03/07/%E6%91%B8%E9%B1%BC%E7%9A%84%E7%AC%AC%E4%B8%80%E5%A4%A9/"><div class="aside-post-cover"><img class="aside-post-bg lazyload" data-src="https://cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@2.1.0/top_img/default.png" onerror="this.onerror=null;this.src='/img/404.jpg'" title="摸鱼的第一天" alt="摸鱼的第一天"></div><div class="aside-post-title"><div class="aside-post_title" href="/2022/03/07/%E6%91%B8%E9%B1%BC%E7%9A%84%E7%AC%AC%E4%B8%80%E5%A4%A9/" title="摸鱼的第一天">摸鱼的第一天</div><time class="aside-post_meta post-meta__date">2022-03-07</time></div></a></div><div class="aside-recent-post"><a href="/2020/10/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8C%E7%9A%84%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/"><div class="aside-post-cover"><img class="aside-post-bg lazyload" data-src="/img/cover4.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="计算机中进制换算" alt="计算机中进制换算"></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/10/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8C%E7%9A%84%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/" title="计算机中进制换算">计算机中进制换算</div><time class="aside-post_meta post-meta__date">2020-10-01</time></div></a></div><div class="aside-recent-post"><a href="/2020/10/01/%E5%AF%86%E7%A0%81%E5%AD%A6_%E7%AC%94%E8%AE%B0%E5%A4%87%E5%BF%98_%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D/"><div class="aside-post-cover"><img class="aside-post-bg lazyload" data-src="/img/cover4.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="密码学_笔记备忘_数字签名" alt="密码学_笔记备忘_数字签名"></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/10/01/%E5%AF%86%E7%A0%81%E5%AD%A6_%E7%AC%94%E8%AE%B0%E5%A4%87%E5%BF%98_%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D/" title="密码学_笔记备忘_数字签名">密码学_笔记备忘_数字签名</div><time class="aside-post_meta post-meta__date">2020-10-01</time></div></a></div><div class="aside-recent-post"><a href="/2020/10/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"><div class="aside-post-cover"><img class="aside-post-bg lazyload" data-src="/img/cover4.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="计算机组成原理" alt="计算机组成原理"></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/10/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" title="计算机组成原理">计算机组成原理</div><time class="aside-post_meta post-meta__date">2020-10-01</time></div></a></div><div class="aside-recent-post"><a href="/2020/10/01/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%AC%94%E8%AE%B0/"><div class="aside-post-cover"><img class="aside-post-bg lazyload" data-src="/img/cover4.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="汇编语言（王爽老师）笔记" alt="汇编语言（王爽老师）笔记"></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/10/01/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%AC%94%E8%AE%B0/" title="汇编语言（王爽老师）笔记">汇编语言（王爽老师）笔记</div><time class="aside-post_meta post-meta__date">2020-10-01</time></div></a></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fa fa-folder-open" aria-hidden="true"></i><span>分类</span></div><ul class="aside-category-item">       <li class="aside-category-list"><a class="aside-category-list_link" href="/categories/sqli-labs/"><span class="aside-category-list_name">sqli-labs</span><span class="aside-category-list_length">9</span></a></li></ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fa fa-tags" aria-hidden="true"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/DES/" style="font-size: 16px; color: #999">DES</a> <a href="/tags/RSA%EF%BC%8C%E5%85%AC%E9%92%A5%E5%AF%86%E7%A0%81/" style="font-size: 16px; color: #999">RSA，公钥密码</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 21.33px; color: #99a4b2">学习</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%EF%BC%8C%E5%A4%87%E5%BF%98/" style="font-size: 16px; color: #999">学习，备忘</a> <a href="/tags/%E5%AE%9A%E7%82%B9%E6%95%B0%E5%92%8C%E6%B5%AE%E7%82%B9%E6%95%B0/" style="font-size: 16px; color: #999">定点数和浮点数</a> <a href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" style="font-size: 18.67px; color: #999ea6">密码学</a> <a href="/tags/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D/" style="font-size: 16px; color: #999">数字签名</a> <a href="/tags/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/" style="font-size: 16px; color: #999">汇编语言</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 24px; color: #99a9bf">笔记</a> <a href="/tags/%E7%AC%A6%E5%8F%B7%E6%95%B0/" style="font-size: 16px; color: #999">符号数</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 16px; color: #999">计算机组成原理</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fa fa-archive" aria-hidden="true"></i><span>归档</span></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/"><span class="archive-list-date">2022年03月</span><span class="archive-list-count">1</span></a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/"><span class="archive-list-date">2020年10月</span><span class="archive-list-count">16</span></a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/"><span class="archive-list-date">2020年03月</span><span class="archive-list-count">1</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fa fa-line-chart" aria-hidden="true"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-article-name">文章数目 :</div><div class="webinfo-article-count">18</div></div><div class="webinfo-item"><div class="webinfo-runtime-name">已运行时间 :</div><div class="webinfo-runtime-count" id="webinfo-runtime-count" start_date="2020/03/09/18:05">     </div></div></div></div></div></div></div></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By JxXxX</div><div class="framework-info"><span>驱动 </span><a href="http://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div><div class="footer_custom_text">这是个彩蛋~</div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="简繁转换" target="_self">繁</a><i class="darkmode fa fa-sun-o" id="darkmode" title="夜间模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="设置"><i class="fa fa-cog" aria-hidden="true"></i></div><i class="fa fa-arrow-up" id="go-up" title="回到顶部" aria-hidden="true"></i></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/live2d-widget/autoload.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script id="ribbon_piao" mobile="true" src="https://cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@2.1.0/js/piao.js"></script><script id="canvas_nest" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="true" src="https://cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@2.1.0/js/canvas-nest.js"></script><script src="https://cdn.jsdelivr.net/npm/activate-power-mode/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true; 
+document.body.addEventListener('input', POWERMODE);
+</script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@latest/lazysizes.min.js" async=""></script><script src="https://cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@2.1.0/js/ClickShowText.js"></script><script src="https://cdn.jsdelivr.net/npm/typed.js"></script><script type="text/javascript" src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script><script>jinrishici.load(function(result) {
+  var sub = '刷新可查看下一条句子,今天也要努力哦！'.length == 0  ? new Array() : '刷新可查看下一条句子,今天也要努力哦！'.split(",");
+  var content = result.data.content;
+  var both = sub.unshift(content)
+  var typed = new Typed(".subtitle", {
+  strings: sub,
+  startDelay: 300,
+  typeSpeed: 100,
+  loop: true,
+  backSpeed: 50
+});
+})
+</script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>
